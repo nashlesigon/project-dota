@@ -1,0 +1,26 @@
+AzulServerEnv Plugin
+====================
+
+Author: Reynaldo Castellano III
+Version: 1.0
+
+The primary purpose of this plugin is to provide configurations that are server specific.
+For example the database host used when connecting to the database is based on the server environment that the code is running.
+If the server is a local development environment, the database should point to the local database server.
+
+Installation:
+=============
+	* Place a copy of the AzulServerEnv plugin to the plugin folder of your symfony project.
+	* Activate the plugin.
+	* Create a server_env.yml file in the config directory of your symfony project. A sample file is provided in config directory of the plugin.
+	* You are done!
+	
+Usage:
+======
+	You can access the configuration values through the AzulServerEnv class. For example, you have a 'db_host' configuration for all server environment, accessing the 
+	that configuration value would be:
+		
+		$dbHost = AzulServerEnv::getInstance()->get('db_host');
+	
+	The logic for determining the current server environment is encapsulated within the plugin. There are currently 2 server environment types supported by the plugin, 
+	the 'local' and 'production' server environments.

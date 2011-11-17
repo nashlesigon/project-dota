@@ -1,0 +1,76 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  hero_affiliations:
+    _attributes: { phpName: HeroAffiliation }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '50', required: true }
+  hero_skills:
+    _attributes: { phpName: HeroSkill }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    hero_id: { phpName: HeroId, type: INTEGER, size: '10', required: true, foreignTable: heroes, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    name: { phpName: Name, type: VARCHAR, size: '100', required: true }
+    description: { phpName: Description, type: LONGVARCHAR, required: true }
+    order: { phpName: Order, type: TINYINT, size: '3', required: true }
+    skill_type: { phpName: SkillType, type: VARCHAR, size: '45', required: true }
+    hotkey: { phpName: Hotkey, type: CHAR, size: '1', required: true }
+    image_filename: { phpName: ImageFilename, type: VARCHAR, size: '200', required: true }
+    _indexes: { hero_skills_to_heroes: [hero_id] }
+  hero_types:
+    _attributes: { phpName: HeroType }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '50', required: true }
+  heroes:
+    _attributes: { phpName: Hero }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '100', required: true }
+    legend: { phpName: Legend, type: VARCHAR, size: '100', required: true }
+    image_filename: { phpName: ImageFilename, type: VARCHAR, size: '200', required: true }
+    primary_attribute_id: { phpName: PrimaryAttributeId, type: INTEGER, size: '10', required: true, foreignTable: primary_attributes, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    intro: { phpName: Intro, type: LONGVARCHAR, required: false }
+    background: { phpName: Background, type: LONGVARCHAR, required: false }
+    type_id: { phpName: TypeId, type: INTEGER, size: '10', required: true, foreignTable: hero_types, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    affiliation_id: { phpName: AffiliationId, type: INTEGER, size: '10', required: true, foreignTable: hero_affiliations, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    basic_strength: { phpName: BasicStrength, type: INTEGER, size: '10', required: true }
+    basic_agility: { phpName: BasicAgility, type: INTEGER, size: '10', required: true }
+    basic_intelligence: { phpName: BasicIntelligence, type: INTEGER, size: '10', required: true }
+    add_strength: { phpName: AddStrength, type: FLOAT, required: true }
+    add_agility: { phpName: AddAgility, type: FLOAT, required: true }
+    add_intelligence: { phpName: AddIntelligence, type: FLOAT, required: true }
+    hp: { phpName: Hp, type: INTEGER, size: '10', required: true }
+    mana: { phpName: Mana, type: INTEGER, size: '10', required: true }
+    min_damage: { phpName: MinDamage, type: INTEGER, size: '10', required: true }
+    max_damage: { phpName: MaxDamage, type: INTEGER, size: '10', required: true }
+    _indexes: { heroes_to_hero_types: [type_id], heroes_to_hero_affiliations: [affiliation_id], heroes_to_primary_attributes: [primary_attribute_id] }
+  item_recipes:
+    _attributes: { phpName: ItemRecipe }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    item_id: { phpName: ItemId, type: INTEGER, size: '10', required: true, foreignTable: items, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    parent_id: { phpName: ParentId, type: INTEGER, size: '10', required: true }
+    _indexes: { item_recipes_to_items: [item_id] }
+  item_stores:
+    _attributes: { phpName: ItemStore }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '100', required: true }
+  items:
+    _attributes: { phpName: Item }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '100', required: true }
+    image_filename: { phpName: ImageFilename, type: VARCHAR, size: '200', required: true }
+    description: { phpName: Description, type: LONGVARCHAR, required: false }
+    additional_info: { phpName: AdditionalInfo, type: LONGVARCHAR, required: true }
+    strength: { phpName: Strength, type: INTEGER, size: '10', required: true }
+    agility: { phpName: Agility, type: INTEGER, size: '10', required: true }
+    intelligence: { phpName: Intelligence, type: INTEGER, size: '10', required: true }
+    damage: { phpName: Damage, type: INTEGER, size: '10', required: true }
+    armor: { phpName: Armor, type: INTEGER, size: '10', required: true }
+    hp: { phpName: Hp, type: INTEGER, size: '10', required: true }
+    mana: { phpName: Mana, type: INTEGER, size: '10', required: true }
+    price: { phpName: Price, type: INTEGER, size: '10', required: true }
+    store_id: { phpName: StoreId, type: INTEGER, size: '10', required: true, foreignTable: item_stores, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    _indexes: { items_to_item_stores: [store_id] }
+  primary_attributes:
+    _attributes: { phpName: PrimaryAttribute }
+    id: { phpName: Id, type: INTEGER, size: '10', primaryKey: true, autoIncrement: true, required: true }
+    name: { phpName: Name, type: VARCHAR, size: '45', required: false }

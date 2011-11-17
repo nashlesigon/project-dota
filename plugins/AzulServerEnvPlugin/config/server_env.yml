@@ -1,0 +1,8 @@
+local:
+  db_host: '192.168.1.120'
+  asset_servers: ['mylocal.com']
+  map_key: ''
+  
+production:
+  db_host: 'mysql.prod-server.com'
+  asset_servers: ['cdn1.domain.com', 'cdn2.domain.com', 'cdn3.domain.com']
