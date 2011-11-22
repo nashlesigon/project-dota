@@ -247,6 +247,7 @@ a {text-decoration: none;}
 }
 .level p {float: left;margin-right: 10px;}
 .choose-hero .menu, .choose-item .menu {display: block;text-align: center;background-color: #222;font-size: 18px;color: #AA352D;padding: 5px 0;font-weight: bold;text-shadow: 1px 1px 1px #111;}
+.choose-hero header, .choose-item header {background-color: #333;border-bottom: 1px solid #444;}
 
 /* =============================================================================
    Non-semantic helper classes
