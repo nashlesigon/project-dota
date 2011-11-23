@@ -32,6 +32,6 @@ class mainActions extends sfActions
 
          echo json_encode(array('html' => get_partial('main/stats',array('data'=>DotaResourceData::getInstance()->getData($heroId,$heroLevel,$itemIds)))));
          $this->getResponse()->setContentType('text/json');
-		 exit;
+		     exit;
      }
 }
