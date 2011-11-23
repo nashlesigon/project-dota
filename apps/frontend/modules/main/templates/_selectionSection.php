@@ -1,6 +1,6 @@
 <aside class="selection">
 	<section class="choose-hero">
-		<a href="">Choose Hero</a>
+		<a class="menu" href="">Choose Hero</a>
 		<header>
 			<div class="all-details">
 				<section class="hero-basic-info">
@@ -72,7 +72,7 @@
 		</section>				
 	</section>
 	<section class="choose-item">
-		<a href="">Choose Item</a>
+		<a class="menu" href="">Choose Item</a>
 		<header>
 			<div class="all-details">
 				<section class="item-basic-info">
