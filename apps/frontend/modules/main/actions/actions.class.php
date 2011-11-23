@@ -20,18 +20,18 @@ class mainActions extends sfActions
 
 	}
 
-  public function executeCompute(sfWebRequest $request){
-    sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
+     public function executeCompute(sfWebRequest $request){
+         sfContext::getInstance()->getConfiguration()->loadHelpers('Partial');
 
-//    $heroId = $request->getParameter('heroId');
-    $heroLevel = $request->getParameter('heroLevel');
-//    $itemIds = $request->getParameter('itemIds');
+//       $heroId = $request->getParameter('heroId');
+         $heroLevel = $request->getParameter('heroLevel');
+//       $itemIds = $request->getParameter('itemIds');
 
-    $heroId = 1;
-    $itemIds = array(1,2);
+         $heroId = 1;
+         $itemIds = array(1,2);
 
-    echo json_encode(array('html' => get_partial('main/stats',array('data'=>DotaResourceData::getInstance()->getData($heroId,$heroLevel,$itemIds)))));
-    $this->getResponse()->setContentType('text/json');
-		exit;
-  }
+         echo json_encode(array('html' => get_partial('main/stats',array('data'=>DotaResourceData::getInstance()->getData($heroId,$heroLevel,$itemIds)))));
+         $this->getResponse()->setContentType('text/json');
+		 exit;
+     }
 }
