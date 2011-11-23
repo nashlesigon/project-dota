@@ -13,9 +13,9 @@
 				<div class="level">
 					<p>Hero Level</p>
 					<select name="" id="heroLevel">
-						<option value="1">1</option>
-						<option value="2">2</option>
-            <option value="3">3</option>
+						<?php for($i=1;$i<=$maxLevel=25;$i++):?>
+							<option value='<?php echo $i?>'><?php echo $i?></option>
+						<?php endfor;?>
 					</select>
 				</div>
 
