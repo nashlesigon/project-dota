@@ -15,7 +15,7 @@
 class Hero extends BaseHero {
 	
 	public function getImagepath(){
-		return "/uploads/assets/sample_hero/".$this->getImageFilename();
+		return "/uploads/hero_images/".$this->getImageFilename();
 	}
 	
 	public function getSkills(){
