@@ -244,6 +244,7 @@ a {text-decoration: none;}
     width: 120px;
     margin: 0 auto;	
     text-shadow: -1px -1px 0 #222222;
+    outline: none;
 }
 .level p {float: left;margin-right: 10px;}
 .choose-hero .menu, .choose-item .menu {display: block;text-align: center;background-color: #222;font-size: 18px;color: #AA352D;padding: 5px 0;font-weight: bold;text-shadow: 1px 1px 1px #111;border-bottom: 1px solid #444;}
@@ -252,6 +253,10 @@ a {text-decoration: none;}
 .choose-item .menu {border-top: 1px solid #444;}
 .selection ul {margin: 0;}
 
+#stat_table {margin-top: 20px;border-left: 1px solid #444;border-top: 1px solid #444;}
+#stat_table th, #stat_table td {border-right: 1px solid #444;border-bottom: 1px solid #444;padding: 12px;text-align: center;vertical-align: middle;} 
+#stat_table th {background-color: #222;font-weight: bold;}
+#stat_table td {background-color: #333;}
 
 /* =============================================================================
    Non-semantic helper classes

@@ -92,9 +92,7 @@
 	</section>
 
 	<!-- Stats -->
-	<table id="stat_table">
-
-  </table>
+	<table id="stat_table"></table>
 </div>
 
 <!-- Selection Section -->
