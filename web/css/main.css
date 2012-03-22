@@ -286,6 +286,10 @@ a {text-decoration: none;}
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.to-left {
+    float: left;
+}
+
 
 
 /* =============================================================================
